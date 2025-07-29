@@ -1,14 +1,15 @@
 import Flag from "react-world-flags";
 import { useState, useEffect } from "react";
 
-// Mappa lingua -> codice paese
+
 const languageToCountry = {
 	en: "GB",
 	it: "IT",
 	fr: "FR",
 	es: "ES",
 	de: "DE",
-	// aggiungi altri se vuoi
+	ja: "JP",
+
 };
 
 export default function Films({ movies, loading }) {
