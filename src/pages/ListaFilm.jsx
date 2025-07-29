@@ -1,4 +1,6 @@
+import { languageToFlag } from "../contexts/Language";
 import { useState, useEffect } from "react";
+
 export default function ListaFilm() {
 
 
@@ -30,8 +32,10 @@ export default function ListaFilm() {
 	return (
 		<>
 			<header>
+				<span>🇬🇧 🇮🇹 🇫🇷 🇪🇸 🇩🇪</span>
 				<div className="container">
 					<h1>Lista Film</h1>
+
 				</div>
 			</header>
 			<main>
@@ -52,9 +56,16 @@ export default function ListaFilm() {
 							<li key={movie.id}>
 								<h2>{movie.title}</h2>
 								<p><strong>Titolo originale:</strong> {movie.original_title}</p>
-								<p><strong>Lingua:</strong> {movie.original_language}</p>
+								<span>
+									<strong>Lingua:</strong> {movie.original_language}{" "}
+									<span style={{ fontFamily: "Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif" }}>
+										{languageToFlag(movie.original_language)}
+									</span>
+								</span>
 								<p><strong>Voto:</strong> {movie.vote_average}</p>
 							</li>
+
+
 						))}
 					</ul>
 				</section>

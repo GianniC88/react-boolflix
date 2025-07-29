@@ -10,6 +10,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+
           <Route path="/" element={<ListaFilm />} />
 
         </Routes>
