@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Films from "../contexts/Film"
+
+import { Post } from "../contexts/Post";
 
 export default function ListaFilm() {
 	const [query, setQuery] = useState('');
@@ -47,8 +48,7 @@ export default function ListaFilm() {
 				</div>
 			</header>
 			<main>
-				<Films movies={movies} />
-
+				<Post movies={movies} loading={loading} />
 			</main>
 			<footer>
 

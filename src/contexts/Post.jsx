@@ -1,7 +1,4 @@
-import Flag from "react-world-flags";
-
-
-
+import Flag from "react-world-flags"
 
 const languageToCountry = {
 	en: "GB",
@@ -10,17 +7,16 @@ const languageToCountry = {
 	es: "ES",
 	de: "DE",
 	ja: "JP",
-
 };
 
 export function Post({ movies, loading }) {
 	return (
 		<>
-			{loading && <p>Caricamento...</p>}
 			<ul>
 				{movies.map((movie) => (
 					<li key={movie.id}>
 						<h2>{movie.title}</h2>
+						{/* Mostra il poster se disponibile */}
 						{movie.poster_path ? (
 							<img
 								src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
@@ -42,5 +38,5 @@ export function Post({ movies, loading }) {
 				))}
 			</ul>
 		</>
-	);
+	)
 }
