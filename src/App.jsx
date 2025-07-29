@@ -1,17 +1,19 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
+import ListaFilm from './pages/ListaFilm'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ListaFilm />} />
 
-      <header>header </header>
-      <main>main</main>
-      <footer>footer</footer>
-
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
