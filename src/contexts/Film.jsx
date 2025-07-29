@@ -1,21 +1,20 @@
-
-import { languageToFlag } from "../contexts/Language";
+import Flag from "react-world-flags";
 import { useState, useEffect } from "react";
 
-
+// Mappa lingua -> codice paese
+const languageToCountry = {
+	en: "GB",
+	it: "IT",
+	fr: "FR",
+	es: "ES",
+	de: "DE",
+	// aggiungi altri se vuoi
+};
 
 export default function Films({ movies, loading }) {
-
-
-
-
-
-
-
 	return (
 		<>
 			<section>
-
 			</section>
 			<section>
 				{loading && <p>Caricamento...</p>}
@@ -24,17 +23,15 @@ export default function Films({ movies, loading }) {
 						<li key={movie.id}>
 							<h2>{movie.title}</h2>
 							<p><strong>Titolo originale:</strong> {movie.original_title}</p>
-							<span><strong>Lingua:</strong> {movie.original_language} {languageToFlag(movie.original_language)}</span>
+							<span>
+								<strong>Lingua:</strong> {movie.original_language}{" "}
+								<Flag code={languageToCountry[movie.original_language] || "UN"} height="16" />
+							</span>
 							<p><strong>Voto:</strong> {movie.vote_average}</p>
 						</li>
-
-
 					))}
-
 				</ul>
-
 			</section>
-
 		</>
 	)
 }
