@@ -1,3 +1,4 @@
+
 export function languageToFlag(lang) {
 	const map = {
 		it: '🇮🇹',

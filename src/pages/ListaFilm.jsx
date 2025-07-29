@@ -1,11 +1,7 @@
-import { languageToFlag } from "../contexts/Language";
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
+import Films from "../contexts/Film"
 
 export default function ListaFilm() {
-
-
-
-
 	const [query, setQuery] = useState('');
 	const [movies, setMovies] = useState([]);
 	const [loading, setLoading] = useState(false);
@@ -29,9 +25,21 @@ export default function ListaFilm() {
 		}
 	};
 
+
+
 	return (
 		<>
 			<header>
+				<input
+					type="text"
+					placeholder="Cerca un film..."
+					value={query}
+					onChange={e => setQuery(e.target.value)}
+					onKeyDown={e => e.key === 'Enter' && searchMovies()}
+				/>
+				<button onClick={searchMovies}>Cerca</button>
+
+
 				<span>🇬🇧 🇮🇹 🇫🇷 🇪🇸 🇩🇪</span>
 				<div className="container">
 					<h1>Lista Film</h1>
@@ -39,38 +47,11 @@ export default function ListaFilm() {
 				</div>
 			</header>
 			<main>
-				<section>
-					<input
-						type="text"
-						placeholder="Cerca un film..."
-						value={query}
-						onChange={e => setQuery(e.target.value)}
-						onKeyDown={e => e.key === 'Enter' && searchMovies()}
-					/>
-					<button onClick={searchMovies}>Cerca</button>
-				</section>
-				<section>
-					{loading && <p>Caricamento...</p>}
-					<ul>
-						{movies.map((movie) => (
-							<li key={movie.id}>
-								<h2>{movie.title}</h2>
-								<p><strong>Titolo originale:</strong> {movie.original_title}</p>
-								<span>
-									<strong>Lingua:</strong> {movie.original_language}{" "}
-									<span style={{ fontFamily: "Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif" }}>
-										{languageToFlag(movie.original_language)}
-									</span>
-								</span>
-								<p><strong>Voto:</strong> {movie.vote_average}</p>
-							</li>
+				<Films movies={movies} />
 
-
-						))}
-					</ul>
-				</section>
 			</main>
 			<footer>
+
 				<p>footer</p>
 			</footer>
 		</>
