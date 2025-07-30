@@ -17,7 +17,30 @@ body {
     background-color: antiquewhite;
   }
 }
-
+.movie-grid {
+  background-color: #3f474e;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 35px;
+}
 .MovieCard {
-  height: 350px;
+  height: 450px;
+  width: 300px;
+  position: relative;
+  margin-bottom: 16px;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  border-radius: 6px;
+}
+
+.movie-overlay {
+  padding: 16px;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  background: rgba(30, 30, 30, 0.95);
+  color: wheat;
 }
