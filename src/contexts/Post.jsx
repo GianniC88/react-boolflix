@@ -12,13 +12,13 @@ const languageToCountry = {
 export function Post({ movies, loading }) {
 	return (
 		<>
-			<section className="bg-secondary p-">
+			<section className="Post bg-secondary ">
 				<div className="container">
 					<div className="row ">
 						{movies.map((movie) => {
 							const stelle = Math.round(movie.vote_average / 2);
 							return (
-								<div className="col-4 mb-4 mt-4 " key={movie.id}>
+								<div className="col-12 col-md-6 col-lg-4 mb-4 mt-4" key={movie.id}>
 									<div className="card h-100 ">
 										<div className="card-body  ">
 											<ul>

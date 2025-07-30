@@ -1,6 +1,6 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
+import './index.css';
 
 import ListaFilm from './pages/ListaFilm'
 
