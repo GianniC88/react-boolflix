@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Header from "../layout/Header";
 import { Post } from "../contexts/Post";
 
 export default function ListaFilm() {
@@ -30,23 +30,7 @@ export default function ListaFilm() {
 
 	return (
 		<>
-			<header>
-				<input
-					type="text"
-					placeholder="Cerca un film..."
-					value={query}
-					onChange={e => setQuery(e.target.value)}
-					onKeyDown={e => e.key === 'Enter' && searchMovies()}
-				/>
-				<button onClick={searchMovies}>Cerca</button>
-
-
-				<span>🇬🇧 🇮🇹 🇫🇷 🇪🇸 🇩🇪</span>
-				<div className="container">
-					<h1>Lista Film</h1>
-
-				</div>
-			</header>
+			<Header query={query} setQuery={setQuery} onSearch={searchMovies} />
 			<main>
 				<Post movies={movies} loading={loading} />
 			</main>
