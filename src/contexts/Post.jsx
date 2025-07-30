@@ -14,12 +14,12 @@ export function Post({ movies, loading }) {
 		<>
 			<section className="bg-secondary p-">
 				<div className="container">
-					<div className="row">
+					<div className="row ">
 						{movies.map((movie) => {
 							const stelle = Math.round(movie.vote_average / 2);
 							return (
 								<div className="col-4 mb-4 mt-4 " key={movie.id}>
-									<div className="card ">
+									<div className="card h-100 ">
 										<div className="card-body  ">
 											<ul>
 												<li >
