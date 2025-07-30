@@ -1,4 +1,5 @@
 import Flag from "react-world-flags"
+const stelle = Math.round(movie.vote_average / 2);
 
 const languageToCountry = {
 	en: "GB",
@@ -33,7 +34,19 @@ export function Post({ movies, loading }) {
 							<strong>Lingua:</strong> {movie.original_language}{" "}
 							<Flag code={languageToCountry[movie.original_language] || "UN"} height="16" />
 						</span>
-						<p><strong>Voto:</strong> {movie.vote_average}</p>
+						<p>
+							<strong>Voto:</strong> {movie.vote_average}
+							<span>
+								{/* Stelle piene */}
+								{Array.from({ length: Math.round(movie.vote_average / 2) }, (_, i) => (
+									<span key={i} style={{ color: "#FFD700" }}>★</span>
+								))}
+								{/* Stelle vuote */}
+								{Array.from({ length: 5 - Math.round(movie.vote_average / 2) }, (_, i) => (
+									<span key={i} style={{ color: "#ccc" }}>☆</span>
+								))}
+							</span>
+						</p>
 					</li>
 				))}
 			</ul>
