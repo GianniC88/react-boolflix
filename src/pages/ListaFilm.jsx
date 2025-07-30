@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../layout/Header";
-import { Post } from "../contexts/Post";
+import { Post } from "../components/Post";
 
 export default function ListaFilm() {
 	const [query, setQuery] = useState('');
@@ -31,11 +31,12 @@ export default function ListaFilm() {
 	return (
 		<>
 			<Header query={query} setQuery={setQuery} onSearch={searchMovies} />
+
 			<main>
 				<Post movies={movies} loading={loading} />
 			</main>
-			<footer>
 
+			<footer>
 				<p>footer</p>
 			</footer>
 		</>
