@@ -17,3 +17,7 @@ body {
     background-color: antiquewhite;
   }
 }
+
+.MovieCard {
+  height: 350px;
+}

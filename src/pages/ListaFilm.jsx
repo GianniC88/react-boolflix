@@ -1,34 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../layout/Header";
-import { Post } from "../components/Post";
 import { useGlobalContext } from "../contexts/GlobalContext";
+import MovieCard from "../components/Card";
 
 export default function ListaFilm() {
-
-	const { movies, loading, searchMovies, query, setQuery, series } = useGlobalContext();
-
-
+	const { movies, loading, searchMovies, query, setQuery } = useGlobalContext();
 
 	return (
 		<>
 			<Header query={query} setQuery={setQuery} onSearch={searchMovies} />
 
 			<main>
-				<section className="Post bg-secondary ">
-					<div className="container">
-						<div className="row ">
-							<Post movies={movies} loading={loading} />
-						</div>
-					</div>
-				</section>
-				<section className="Series bg-secondary ">
-					<h2>Series TV</h2>
-					<div className="container">
-						<div className="row ">
-							<Post movies={series} loading={loading} />
-						</div>
-					</div>
-				</section>
+				<div className="movie-grid">
+					{movies && movies.map(movie => (
+						<MovieCard key={movie.id} movie={movie} />
+					))}
+				</div>
 			</main>
 
 			<footer>
@@ -36,8 +23,9 @@ export default function ListaFilm() {
 			</footer>
 		</>
 	)
-
-
-
-
 }
+
+/*<div className="d-fle">
+						<h2>Series TV</h2>
+						<Post movies={series} loading={loading} />
+					</div> */
