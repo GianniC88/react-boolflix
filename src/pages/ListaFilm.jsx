@@ -33,7 +33,13 @@ export default function ListaFilm() {
 			<Header query={query} setQuery={setQuery} onSearch={searchMovies} />
 
 			<main>
-				<Post movies={movies} loading={loading} />
+				<section className="Post bg-secondary ">
+					<div className="container">
+						<div className="row ">
+							<Post movies={movies} loading={loading} />
+						</div>
+					</div>
+				</section>
 			</main>
 
 			<footer>
