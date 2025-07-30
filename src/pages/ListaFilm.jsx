@@ -41,7 +41,7 @@ export default function ListaFilm() {
 				<button onClick={searchMovies}>Cerca</button>
 
 
-
+				<span>🇬🇧 🇮🇹 🇫🇷 🇪🇸 🇩🇪</span>
 				<div className="container">
 					<h1>Lista Film</h1>
 
