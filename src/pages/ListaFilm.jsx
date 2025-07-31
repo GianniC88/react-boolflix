@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../layout/Header";
 import { useGlobalContext } from "../contexts/GlobalContext";
 import MovieCard from "../components/Card";

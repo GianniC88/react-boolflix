@@ -1,6 +1,6 @@
 import Flag from "react-world-flags";
 import { useState } from "react";
-import { useGlobalContext } from "../contexts/GlobalContext";
+
 
 export default function MovieCard({ movie }) {
 	const languageToCountry = {
@@ -13,7 +13,7 @@ export default function MovieCard({ movie }) {
 	};
 	const [hover, setHover] = useState(false);
 	const stelle = Math.round(movie.vote_average / 2);
-	const { movies, loading, searchMovies, query, setQuery } = useGlobalContext();
+
 
 	return (
 		<div

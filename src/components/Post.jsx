@@ -1,4 +1,4 @@
-export function Post({ movies, loading }) {
+export function Post({ movies }) {
 	return (
 		<>
 			{movies.map((movie) => {
