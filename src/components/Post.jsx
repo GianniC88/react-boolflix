@@ -29,7 +29,7 @@ export function Post({ movies, loading }) {
 												style={{ width: "150px", borderRadius: "8px" }}
 											/>
 										) : (
-											<div style={{ width: "150px", height: "225px", background: "#eee", display: "flex", alignItems: "center", justifyContent: "center" }}>
+											<div >
 												<span>Nessuna immagine</span>
 											</div>
 										)}
