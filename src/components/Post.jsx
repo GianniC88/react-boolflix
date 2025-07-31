@@ -1,14 +1,3 @@
-import Flag from "react-world-flags"
-
-const languageToCountry = {
-	en: "GB",
-	it: "IT",
-	fr: "FR",
-	es: "ES",
-	de: "DE",
-	ja: "JP",
-};
-
 export function Post({ movies, loading }) {
 	return (
 		<>

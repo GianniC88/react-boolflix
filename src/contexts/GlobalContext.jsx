@@ -11,6 +11,7 @@ function GlobalProvider({ children }) {
 	const [hover, setHover] = useState()
 
 
+
 	const apiKey = import.meta.env.VITE_API_KEY;
 
 	const searchMovies = async () => {
